@@ -34,8 +34,9 @@ let g:EasyMotion_leader_key = '<Leader>'
 let g:ctrlp_map = '<c-p>'
 
 " color scheme configuration
-color molokai
+colorscheme darkmate 
 set background=dark
+set t_Co=256
 
 " set color scheme for vimdiff
 if &diff
@@ -70,7 +71,7 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 	\ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
 
 " set ignore compiled files
-set widignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc
 
 " set navigation between windows
 nnoremap <C-j> <C-w>j
@@ -78,3 +79,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" airline font configuration
+let g:airline_powerline_fonts = 1
+let g:airliine_symbols = 'fancy'
+let g:airline_theme = 'light'
+set encoding=utf-8
+set laststatus=2
