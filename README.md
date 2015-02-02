@@ -10,7 +10,11 @@ git clone https://github.com/yothinix/vimuxz.git ~/.vim
 ./init-submodule
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
+ln -s ~/.vim/fonts ~/.fonts
+fc-cache ~/.fonts
 ```
+
+after this you need to change font configuration in terminal to use Ubuntu **Mono derivative Powerline.ttf**
 
 ##### Installing plugin as a git submodule
 ```
