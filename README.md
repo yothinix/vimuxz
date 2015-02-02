@@ -14,7 +14,7 @@ ln -s ~/.vim/fonts ~/.fonts
 fc-cache ~/.fonts
 ```
 
-after this you need to change font configuration in terminal to use Ubuntu **Mono derivative Powerline.ttf**
+after this you need to change font configuration in terminal to use **Ubuntu Mono derivative Powerline.ttf**
 
 ##### Installing plugin as a git submodule
 ```
