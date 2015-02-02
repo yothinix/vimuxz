@@ -9,6 +9,7 @@ cd ~
 git clone https://github.com/yothinix/vimuxz.git ~/.vim
 ./init-submodule
 ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ```
 
 ##### Installing plugin as a git submodule
