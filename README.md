@@ -13,8 +13,18 @@ ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ln -s ~/.vim/fonts ~/.fonts
 fc-cache ~/.fonts
 ```
-
 after this you need to change font configuration in terminal to use **Ubuntu Mono derivative Powerline.ttf**
+
+##### Setting up OH-MY-ZSH
+```
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+rm ~/.zshrc
+ln -s ~/.vim/zshrc ~/.zshrc
+chsh -s /bin/zsh
+```
+then you need to logout and login again to effect the change in user shell
+
+
 
 ##### Installing plugin as a git submodule
 ```
