@@ -24,6 +24,16 @@ chsh -s /bin/zsh
 ```
 then you need to logout and login again to effect the change in user shell
 
+##### Installing oh-my-zsh additional plugin
+```
+cd ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+```
+
+then you need to reload the zsh configuration by
+```
+source ~/.zshrc
+```
 
 
 ##### Installing plugin as a git submodule
