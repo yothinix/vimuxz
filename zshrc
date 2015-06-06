@@ -1,3 +1,7 @@
+#Change default editor to VIM
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/yothinix/.oh-my-zsh
 
