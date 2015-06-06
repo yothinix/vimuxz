@@ -7,10 +7,11 @@ VIMUXZ
 sudo apt-get install curl git git-flow tmux vim zsh
 cd ~
 git clone https://github.com/yothinix/vimuxz.git ~/.vim
-git submodule update --init --recursive
+ln -s ~/.vim/gitconfig ~/.gitconfig
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ln -s ~/.vim/fonts ~/.fonts
+git submodule update --init --recursive
 fc-cache ~/.fonts
 ```
 after this you need to change font configuration in terminal to use **Ubuntu Mono derivative Powerline.ttf**
