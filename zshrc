@@ -1,3 +1,12 @@
+#Virtualenvwrapper configuration
+#install step
+# 1) sudo apt-get install python-pip
+# 2) pip install virtualenvwrapper
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source $HOME/.local/bin/virtualenvwrapper.sh
+
 #Change default editor to VIM
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -53,7 +62,7 @@ plugins=(git command-not-found common-aliases git-flow jsontools npm pip zsh-syn
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:$HOME/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

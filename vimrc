@@ -57,7 +57,7 @@ set noswapfile
 set autoread
 
 " html configuration
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=4 tabstop=4
 
 " JavaScript configuration
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
