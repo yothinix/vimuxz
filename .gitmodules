@@ -38,5 +38,5 @@
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode.git
 [submodule "/home/yothinix/.vim/bundle/vim-elixir"]
-	path = /home/yothinix/.vim/bundle/vim-elixir
+	path = bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
