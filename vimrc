@@ -13,6 +13,7 @@ execute pathogen#infect()
 "groenewege/vim-less
 "mattn/emmet-vim
 "klen/python-mode
+"elixir-lang/vim-elixir
 
 
 " set line number
