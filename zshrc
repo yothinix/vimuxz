@@ -1,3 +1,7 @@
+alias extranet='ssh ubuntu@extranet.britmilfit.com'
+alias slave='ssh ubuntu@slave.britmilfit.com'
+alias uat='ssh ubuntu@uat.britmilfit.com'
+
 #Virtualenvwrapper configuration
 #install step
 # 1) sudo apt-get install python-pip

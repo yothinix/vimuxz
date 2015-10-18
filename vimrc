@@ -11,6 +11,8 @@ execute pathogen#infect()
 "nanotech/jellybeans.vim #colorscheme
 "scrooloose/nerdtree
 "groenewege/vim-less
+"mattn/emmet-vim
+"klen/python-mode
 
 
 " set line number
@@ -62,6 +64,9 @@ autocmd FileType html setlocal shiftwidth=4 tabstop=4
 " JavaScript configuration
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+" JavaScript Syntax enhance
+au FileType javascript call JavaScriptFold()
+
 " NERDTree configuration
 autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
@@ -84,3 +89,17 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
 set encoding=utf-8
 set laststatus=2
+
+" set new lead key for emmet-vim
+" FORNOW use default lead key which is ctrl + y + ,
+" let g:user_emmet_leader_key='<C-Z>'
+
+" Settings for python-mode
+let g:pymode_syntax = 1
+let g:pymode_syntax_builtin_objs = 1
+let g:pymode_syntax_builtin_funcs = 1
+let g:pymode_folding = 0
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_lint = 0
+let g:pymode_rope_complete_on_dot = 0
