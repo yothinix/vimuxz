@@ -4,13 +4,14 @@ VIMUXZ
 
 ##### Installing
 ```
-apt-get install vim tmux zsh
+sudo apt-get install curl git git-flow tmux vim zsh
 cd ~
 git clone https://github.com/yothinix/vimuxz.git ~/.vim
-./init-submodule
+ln -s ~/.vim/gitconfig ~/.gitconfig
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ln -s ~/.vim/fonts ~/.fonts
+git submodule update --init --recursive
 fc-cache ~/.fonts
 ```
 after this you need to change font configuration in terminal to use **Ubuntu Mono derivative Powerline.ttf**
@@ -24,6 +25,16 @@ chsh -s /bin/zsh
 ```
 then you need to logout and login again to effect the change in user shell
 
+##### Installing oh-my-zsh additional plugin
+```
+cd ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+```
+
+then you need to reload the zsh configuration by
+```
+source ~/.zshrc
+```
 
 
 ##### Installing plugin as a git submodule

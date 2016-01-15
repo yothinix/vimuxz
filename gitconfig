@@ -1,0 +1,11 @@
+[user]
+	email = yothin@proteus-tech.com
+    name = yothinix
+[color]
+    ui = auto
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[core]
+    editor = vim
