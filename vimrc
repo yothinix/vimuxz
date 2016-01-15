@@ -34,7 +34,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 let g:ctrlp_map = '<c-p>'
 
 " color scheme configuration
-colorscheme darkmate 
+colorscheme darkmate
 set t_Co=256
 
 " set color scheme for vimdiff
@@ -84,3 +84,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
 set encoding=utf-8
 set laststatus=2
+
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
