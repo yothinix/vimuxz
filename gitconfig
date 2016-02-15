@@ -9,3 +9,5 @@
     prompt = false
 [core]
     editor = vim
+[http]
+	sslverify = false

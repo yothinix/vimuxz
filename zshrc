@@ -1,7 +1,3 @@
-alias extranet='ssh ubuntu@extranet.britmilfit.com'
-alias slave='ssh ubuntu@slave.britmilfit.com'
-alias uat='ssh ubuntu@uat.britmilfit.com'
-
 #Virtualenvwrapper configuration
 #install step
 # 1) sudo apt-get install python-pip
@@ -9,11 +5,23 @@ alias uat='ssh ubuntu@uat.britmilfit.com'
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source $HOME/.local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 #Change default editor to VIM
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias da='docker attach --sig-proxy=false'
+alias de='docker exec -it'
+alias extranet='ssh ubuntu@extranet.britmilfit.com'
+alias slave='ssh ubuntu@slave.britmilfit.com'
+alias uat='ssh ubuntu@uat.britmilfit.com'
+alias pgcli='pgcli -h /home/yothinix/projects/bmf/postgres/run/'
+alias tmux='tmux -2'
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/yothinix/.oh-my-zsh
@@ -66,7 +74,7 @@ plugins=(git command-not-found common-aliases git-flow jsontools npm pip zsh-syn
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:$HOME/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:$HOME/bin:$HOME/.virtualenvs"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -104,3 +112,13 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
 # NDK_PATH
 export NDK_PATH=$HOME/yothinix/projects/android-tools/android-ndk-r10d
+
+# commandline completion docker-compose
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
+# mobile-client-android settings up
+export LD_PRELOAD=""
+#export PATH=$PATH:~/projects/android-tools/android-sdk-linux/ndk-bundle/
+export PATH=$PATH:~/tmp/ndk-bundle/
+# ~/projects/android-tools/android-studio/bin/studio.sh > /dev/null 2> /dev/null

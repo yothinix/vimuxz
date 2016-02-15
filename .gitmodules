@@ -40,3 +40,6 @@
 [submodule "/home/yothinix/.vim/bundle/vim-elixir"]
 	path = bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "bundle/jellybeans"]
+	path = bundle/jellybeans
+	url = git@github.com:nanotech/jellybeans.vim.git

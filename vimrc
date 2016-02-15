@@ -14,6 +14,7 @@ execute pathogen#infect()
 "mattn/emmet-vim
 "klen/python-mode
 "elixir-lang/vim-elixir
+"nanotech/jellybeans.vim
 
 
 " set line number
@@ -108,3 +109,4 @@ let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'
 let g:pymode_lint = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_lookup_project = 0
