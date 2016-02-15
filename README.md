@@ -11,6 +11,7 @@ ln -s ~/.vim/gitconfig ~/.gitconfig
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ln -s ~/.vim/fonts ~/.fonts
+cd ~/.vim
 git submodule update --init --recursive
 fc-cache ~/.fonts
 ```
