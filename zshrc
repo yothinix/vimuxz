@@ -1,12 +1,3 @@
-#Virtualenvwrapper configuration
-#install step
-# 1) sudo apt-get install python-pip
-# 2) pip install virtualenvwrapper
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-
 #Change default editor to VIM
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -17,14 +8,10 @@ alias la='ls -A'
 alias l='ls -CF'
 alias da='docker attach --sig-proxy=false'
 alias de='docker exec -it'
-alias extranet='ssh ubuntu@extranet.britmilfit.com'
-alias slave='ssh ubuntu@slave.britmilfit.com'
-alias uat='ssh ubuntu@uat.britmilfit.com'
-alias pgcli='pgcli -h /home/yothinix/projects/bmf/postgres/run/'
 alias tmux='tmux -2'
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/yothinix/.oh-my-zsh
+export ZSH=/Users/man/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -104,21 +91,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="/home/yothinix/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# pip download cache
-export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
-
-# NDK_PATH
-export NDK_PATH=$HOME/yothinix/projects/android-tools/android-ndk-r10d
-
 # commandline completion docker-compose
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
-# mobile-client-android settings up
-export LD_PRELOAD=""
-#export PATH=$PATH:~/projects/android-tools/android-sdk-linux/ndk-bundle/
-export PATH=$PATH:~/tmp/ndk-bundle/
-# ~/projects/android-tools/android-studio/bin/studio.sh > /dev/null 2> /dev/null

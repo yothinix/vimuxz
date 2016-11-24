@@ -16,6 +16,8 @@ execute pathogen#infect()
 "elixir-lang/vim-elixir
 "nanotech/jellybeans.vim
 
+" set syntax highlight
+syntax on
 
 " set line number
 set number
@@ -70,11 +72,13 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 au FileType javascript call JavaScriptFold()
 
 " NERDTree configuration
-autocmd vimenter * NERDTree
-autocmd vimenter * if !argc() | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-	\ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+if !&diff
+    autocmd vimenter * NERDTree
+    autocmd vimenter * if !argc() | NERDTree | endif
+    map <C-n> :NERDTreeToggle<CR>
+    let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+	    \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+endif
 
 " set ignore compiled files
 set wildignore=*.o,*~,*.pyc
