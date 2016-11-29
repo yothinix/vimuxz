@@ -10,6 +10,10 @@ alias da='docker attach --sig-proxy=false'
 alias de='docker exec -it'
 alias tmux='tmux -2'
 
+# virtualenv setup
+export WORKON_HOME=~/virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/man/.oh-my-zsh
 
