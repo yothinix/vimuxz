@@ -43,6 +43,3 @@
 [submodule "bundle/jellybeans"]
 	path = bundle/jellybeans
 	url = git@github.com:nanotech/jellybeans.vim.git
-[submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
