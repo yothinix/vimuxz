@@ -1,27 +1,57 @@
+# set lang for pipenv
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PIPENV_MAX_DEPTH=1
+eval "$(pipenv --completion)"
+
 #Change default editor to VIM
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # some more ls aliases
-alias ll='ls -alF'
+# alias ll='ls -alF'
+alias ll='exa -al'
 alias la='ls -A'
-alias l='ls -CF'
+# alias l='ls -CF'
+alias l='exa -al'
+#alias cat='bat'
 alias da='docker attach --sig-proxy=false'
 alias de='docker exec -it'
-alias tmux='tmux -2'
+alias gs='gl && gpoat'
+alias gitru='git remote update origin --prune'
+alias dce='docker-compose exec'
+# alias tmux='tmux -2'
+alias vi='nvim'
+alias vim='nvim'
+alias c='clear'
+alias lzd='lazydocker'
+# alias python='python3'
+
+# Spaceship-prompt
+export SPACESHIP_KUBECONTEXT_SHOW='false'
+export SPACESHIP_VENV_SYMBOL='🌎'
+
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
 # virtualenv setup
 export WORKON_HOME=~/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh  # We don't need this since pipenv + pyenv
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/man/.oh-my-zsh
+export OH_MY_ZSH=$ZSH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+# ZSH_THEME="ys"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -61,12 +91,16 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found common-aliases git-flow jsontools npm pip zsh-syntax-highlighting)
+plugins=(git command-not-found common-aliases git-flow jsontools npm pip zsh-syntax-highlighting autojump)
 
 # User configuration
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:$HOME/bin:$HOME/.virtualenvs"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:$HOME/bin:$HOME/.virtualenvs:$HOME/.composer/vendor/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,11 +108,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+  #export EDITOR='vim'
+#else
+  #export EDITOR='mvim'
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,6 +130,45 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # commandline completion docker-compose
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+#fpath=(~/.zsh/completion $fpath)
+#autoload -Uz compinit && compinit -i
 
+export PATH="/usr/local/p/versions/python:$PATH"
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+
+# Fix neovim not remate <C-w>h
+# infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+# tic $TERM.ti
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# pyenv init
+eval "$(pyenv init - --no-rehash)"
+
+# set vim mode in zsh
+# bindkey -v
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/man/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/man/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/man/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/man/google-cloud-sdk/completion.zsh.inc'; fi

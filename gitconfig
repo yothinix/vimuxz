@@ -1,6 +1,6 @@
 [user]
-	email = yothin@kmi.tl
-    name = yothinix
+	email = m@yothinix.com
+	name = Yothin M
 [color]
     ui = auto
 [diff]
@@ -8,6 +8,10 @@
 [difftool]
     prompt = false
 [core]
-    editor = vim
+    editor = nvim
+	autocrlf = input
 [http]
-	sslverify = false
+  sslverify = false
+[alias]
+  hist = !git --no-pager log --color --pretty=format:'%C(yellow)%h%C(reset)%C(bold red)%d%C(reset) %s %C(black)— %an (%ad)%C(reset)' --relative-date | emojify | less --RAW-CONTROL-CHARS
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

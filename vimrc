@@ -49,8 +49,8 @@ if &diff
 endif
 
 " set tab configuration
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 
@@ -69,7 +69,7 @@ autocmd FileType html setlocal shiftwidth=4 tabstop=4
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " JavaScript Syntax enhance
-au FileType javascript call JavaScriptFold()
+" au FileType javascript call JavaScriptFold()
 
 " NERDTree configuration
 if !&diff
@@ -79,6 +79,7 @@ if !&diff
     let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 	    \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
 endif
+let NERDTreeShowHidden=1
 
 " set ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -109,7 +110,7 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 1
 let g:pymode_syntax_builtin_funcs = 1
 let g:pymode_folding = 0
-let g:pymode_breakpoint = 1
+let g:pymode_breakpoint = 0
 let g:pymode_breakpoint_bind = '<leader>b'
 let g:pymode_lint = 0
 let g:pymode_rope = 0
